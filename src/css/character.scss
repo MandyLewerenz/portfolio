@@ -1,0 +1,189 @@
+@import 'styles';
+
+.section-character {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+}
+
+.character-flex {
+  @extend .flexbox-col;
+  justify-content: center;
+  align-items: center; 
+  height: calc(100vh - 60px);
+}
+
+.character-grid{
+  @extend .grid-container;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.custom-border {
+  border: 10px solid #e7b7b7; 
+  border-radius: 5px;
+  outline: 2px solid darkgrey; 
+  box-shadow: 0 0 0 1px darkgrey;
+  background-image: url('../assets/pixelBg.jpg');
+  height: calc(100vh - 20vh); 
+  width: 80%;
+}
+
+.grid-item-1 {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  justify-content: center;
+}
+
+.grid-item-2 {
+  display: grid;
+  text-align: center;
+  grid-template-rows: 25% 70%; 
+  gap: 5%;
+}
+
+.nested-row {
+  display: grid;
+  text-align: center;
+}
+
+.nested-row-img {
+  display: grid;
+  grid-template-columns: 25% 25%;
+  gap: 10px; 
+  align-content: start;
+  justify-content: center;
+}
+
+.nested-row-skills {
+  display: grid;
+  grid-template-columns: 25% 25%;
+  gap: 10px; 
+  align-content: start;
+  justify-content: center;
+}
+
+.skills{
+  @extend .grid-item-2;
+
+  .grid-progress{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .bg-lnir{
+    background-image: linear-gradient(to right, #f0bdbd , #c99999);
+    top: 0;
+    left: 0;
+  }
+
+  .tools-progres{
+    .progres{
+      position: relative;
+      padding-bottom: 50px;
+    
+      p{
+        font-size: 14px;
+        font-weight: 600;
+        color: #777;
+        margin: 0;
+        top: -20px;
+        right: 0;
+        width: 80px;
+        flex-shrink: 0;
+        text-align: left;
+      }
+      .prog{
+        width: 80%;
+        background-color: #dddddd;
+        border: 3px solid #eee;
+        border-radius: 15px;
+        height: 20px;
+        position: relative;
+      
+        span{
+          position: absolute;
+          height: 100%;
+          border-radius: 15px;
+
+          &::before{
+            position: absolute;
+            content: "";
+            height: 0;
+            width: 0;
+            right: 0;
+            top: -7px;
+            border: 7px solid  transparent;
+            border-bottom-width: 0;
+            border-right-width: 0;
+            border-top-color: darkgrey;
+          }
+
+          &::after{
+            color: white;
+            position: absolute;
+            border-radius: 3px;
+            right: 0;
+            top: -31px;
+            background-color: darkgrey;
+            padding: 1px 5px;
+          }
+          &.html::after,
+          &.css::after{
+            content: "90%";
+          }
+          &.js::after,
+          &.jsf::after{
+            content: "70%";
+          }
+          &.vue::after,
+          &.node::after{
+            content: "40%";
+          }
+        }
+      }
+    }
+  }
+}
+
+.avatar{
+  @extend .grid-item-1;
+
+  .avatar-img{
+    position: relative; 
+    z-index: 100; 
+    height: 400px; 
+    align-self: center;
+  }
+}
+
+.tools{
+  @extend .grid-item-2;
+
+  .heading-tools{
+    @extend .heading;
+    align-self: end;
+  }
+
+  .squares {
+    aspect-ratio: 1/1; /* makes the div a square */
+    background-color: #f2f2f2;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
+  }
+  
+  .img-square {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .img-square img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+}
+
