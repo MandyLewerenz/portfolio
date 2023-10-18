@@ -1,82 +1,117 @@
 <template>
-
-  <navbarComponent/>
-  <sidebarComponent/>
+  <navbarComponent />
+  <sidebarComponent />
 
   <div class="sections-wrapper">
 
-    <div class="full-screen" id="section1">
+    <!-- <div class="full-screen" id="section1">
       <section class="section-profile">
         <div class="first-container"></div>
         <div class="image-container">
-          <img :src="imagePath" class="rounded-circle" alt="Profilbild" /> 
+          <div class="col-sm-12">          
+            <img :src="avatarImage" class="rounded-circle" alt="Profilbild" /> 
+          </div>
           <div class="container text-center">
             <h1 class="mt-3">{{ name }}</h1>
             <p>{{ description }}</p>
           </div>
         </div>
       </section>
+    </div> -->
+
+    <div class="container-fluid g-0" id="section1">
+      <div class="row justify-content-center g-0" style="height: calc(100vh - 60px);">
+        <div class="col-12 g-0 first-container"></div>
+        <!-- <div class="col-10 g-0 image-container d-flex flex-column justify-content-center align-items-end"> -->
+        <div class="col-md-8 col-10 g-0 image-container d-flex flex-column align-items-center justify-content-md-center justify-content-end text-center">
+
+          <img :src="avatarImage" class="rounded-circle img-fluid rounded-circle-image" alt="Profilbild" />
+          <div class="mt-50">
+            <h1>{{ name }}</h1>
+            <p>{{ description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="full-screen" id="section2">
       <section class="section-character">
         <div class="character-flex">
-            
-            <div class="character-grid custom-border" ref="pixelatedBg">
 
-              <!-- SKILLS -->
-              <div class="skills">
-                <div class="nested-row">
-                  <h2 class="heading" style="align-self: end;">Skills</h2>
-                </div>
-                <div class="nested-row" style="padding-left: 30px;">
-                  <div class="tools-progres">
-                    <skill-component 
-                      v-for="skill in skills" 
-                      :key="skill.id" 
-                      :skill="skill">
-                    </skill-component>
-                  </div>
+          <div class="character-grid custom-border" ref="pixelatedBg">
+
+            <!-- SKILLS -->
+            <div class="skills">
+              <div class="nested-row">
+                <h2 class="heading" style="align-self: end;">Skills</h2>
+              </div>
+              <div class="nested-row" style="padding-left: 30px;">
+                <div class="tools-progres">
+                  <skill-component v-for="skill in skills" :key="skill.id" :skill="skill">
+                  </skill-component>
                 </div>
               </div>
-
-              <div class="avatar">
-                  <img :src="avatarImage" alt="avatar" class="avatar-img"/>
-                  <h2 class="heading">Mandy Lewerenz</h2>
-              </div>
-
-              <!-- TOOLS -->
-              <div class="tools">
-                <div class="nested-row">
-                  <h2 class="heading-tools">Tools</h2>
-                </div>
-                <div class="nested-row-img">
-                  <tool-component 
-                    v-for="tool in tools" 
-                    :key="tool.id" 
-                    :tool="tool">
-                  </tool-component>
-                </div>
-              </div>
-
             </div>
+
+            <div class="avatar">
+              <img :src="avatarImage" alt="avatar" class="avatar-img" />
+              <h2 class="heading">Mandy Lewerenz</h2>
+            </div>
+
+            <!-- TOOLS -->
+            <div class="tools">
+              <div class="nested-row">
+                <h2 class="heading-tools">Tools</h2>
+              </div>
+              <div class="nested-row-img">
+                <tool-component v-for="tool in tools" :key="tool.id" :tool="tool">
+                </tool-component>
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </section>
     </div>
 
     <!-- PROJEKTE -->
-    <div class="full-screen" id="section3">
-      <section class="section-projects">
-        <project-component 
-          v-for="project in projects" 
-          :key="project.id" 
-          :project="project">
-        </project-component>
-      </section>
+    <div v-if="isMobile" class="container-fluid g-0" id="section3"  >
+      <div class="row justify-content-center">
+        <div class="col-12 d-flex align-items-center" style="height: calc(100vh - 60px);">
+          <div id="carouselExample" class="carousel carousel-dark slide" >
+            <div class="carousel-inner d-flex align-items-center h-100">
+              <project-component v-for="project in projects" :key="project.id" :project="project">
+              </project-component>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-  </div>
+    <div v-else class="container-fluid" id="section3">
+      <div class="row justify-content-center">
+        <div class="col-8 d-flex align-items-center" style="height: calc(100vh - 60px);">
+          <project-component 
+            v-for="project in projects" 
+            :key="project.id" 
+            :project="project">
+          </project-component>
+        </div>
+      </div>
+    </div>
+
+ 
+
+ </div>
 </template>
 
 
@@ -89,7 +124,6 @@
   import '@/css/projects.scss';
 
   import '@/js/js.js';
-  import { createSquares } from '@/js/js.js';
   import projectComponent from './projectComponent.vue'
   import skillComponent from './skillComponent.vue';
   import toolComponent from './toolComponent.vue';
@@ -113,28 +147,24 @@
         colors: ['#e0e0e0', '#e7b7b7', 'darkgrey'],
         squares: 200,
         size: 10,
+        isMobile: window.innerWidth <= 768,
         projects: [
-        { 
-          id: 1,
-          image: require('@/assets/appLogoCloud.png'), 
-          altText: 'Wetter Logo',
-          name: 'Wetter App',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna'
-        },
-        { 
-          id: 2,
-          image: require('@/assets/docker.png'), 
-          altText: 'Docker Logo',
-          name: 'Memorie',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna'
-        },
-        { 
-          id: 3,
-          image: require('@/assets/docker.png'),
-          altText: 'Docker Logo',
-          name: 'To-Do',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna'
-        },
+          {
+            id: 1,
+            image: require('@/assets/appLogoCloud.png'),
+            class: 'carousel-item active',
+            altText: 'Wetter Logo',
+            name: 'Wetter App',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna'
+          },
+          {
+            id: 2,
+            image: require('@/assets/docker.png'),
+            class: 'carousel-item',
+            altText: 'Docker Logo',
+            name: 'Memorie',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna'
+          },
         ],
         skills: [
           { id: 1, name: 'HTML', class: 'bg-lnir html', width: '95%' },
@@ -152,33 +182,6 @@
           { id: 5, image: require('@/assets/git.png'), alt: 'Git Logo' }
         ]
       };
-    },
-    mounted() {
-      this.scrollHandler();
-      this.sectionsWrapper.addEventListener('scroll', this.scrollHandler);
-      createSquares(document.querySelector('.pixel-container'), ['#e0e0e0', '#e7b7b7', 'darkgrey'], 80, [7, 10, 13]);
-    },
-    beforeUnmount() {
-      this.sectionsWrapper.removeEventListener('scroll', this.scrollHandler);
-    },
-    methods: {
-      scrollHandler() {
-        const sections = document.querySelectorAll('.full-screen');
-        const links = document.querySelectorAll('.sidebar a');
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-            links.forEach(link => link.classList.remove('active'));
-            links[index].classList.add('active');
-          }
-        });
-      },
-    },
-    computed: {
-      sectionsWrapper() {
-        return document.querySelector('.sections-wrapper');
-      }
     },
   };
 </script>

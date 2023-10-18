@@ -1,6 +1,6 @@
-*{
-  box-sizing: border-box; 
-}
+// *{
+//   box-sizing: border-box; 
+// }
 
 html, body {
   margin: 0;
@@ -16,7 +16,7 @@ html, body {
 
 .sections-wrapper {
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   height: calc(100vh - 60px);
   scroll-behavior: smooth;
 }
@@ -95,7 +95,6 @@ nav.navbar {
 
 .heading{
   color: darkgrey;
-  text-align: center;
   text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); 
 }
 
