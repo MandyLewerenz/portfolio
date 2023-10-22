@@ -1,17 +1,5 @@
 @import 'styles';
 
-.section-projects{
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  height: 100%;
-  justify-items: center;
-}
-.projects-container {
-  @extend .container;
-  align-items: center;
-  width: 400px;
-}
-
 .project-img{ 
   border: 3px solid #c99999; 
   border-radius: 50%;

@@ -1,7 +1,3 @@
-// *{
-//   box-sizing: border-box; 
-// }
-
 html, body {
   margin: 0;
   padding: 0;
@@ -9,97 +5,20 @@ html, body {
   overflow: hidden;
 }
 
-.flexbox-col{
-  display: flex;
-  flex-direction: column;
+.section-height{
+  height: calc(100vh - 60px);
 }
 
 .sections-wrapper {
   overflow-y: scroll;
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
   height: calc(100vh - 60px);
   scroll-behavior: smooth;
-}
-
-.full-screen {
-  display: flex;
-  flex-direction: column;
-  scroll-snap-align: start;
-  height: calc(100vh - 60px);
-}
-
-.navbar {
-  height: 60px;
-  background-color: #f2f2f2; 
-  border-bottom: 1px solid #e1dfdf;
-}
-
-nav.navbar {
-  flex-shrink: 0;
-}
-
-.navbar-logo {
-  height: 100%;
-  display: inline-block;  /* Damit Padding und Height wie erwartet funktionieren */
-  padding: 0;  /* Entfernt alle Padding */
-}
-
-.navbar-logo img {
-  height: auto;
-  max-height: 100%;
-  width: auto;
-  max-width: 100%;
-}
-
-.sidebar {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px; 
-}
-
-.sidebar a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #c99999;
-  background-color: transparent;
-}
-
-.sidebar a.active {
-  background-color: #c99999;
-}
- 
-.flex-item {
-  flex: 1;
-  margin: 0 10px;
-}
-
-.square {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-}
-
-.pixelated-bg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
-  overflow: hidden;
 }
 
 .heading{
   color: darkgrey;
   text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); 
-}
-
-.grid-container {
-  display: grid;
 }
 
 .container {

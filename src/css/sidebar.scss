@@ -8,17 +8,26 @@
   display: flex;
   flex-direction: column;
   gap: 20px; 
+
+  a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #c99999;
+    background-color: transparent;
+
+    &.active {
+      background-color: #c99999;
+    }
+  }
 }
 
-.sidebar a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #c99999;
-  background-color: transparent;
+/* Media query for desktop view */
+@media (min-width: 768px) {
+  .sidebar > a {
+      width: 20px;
+      height: 20px;
+  }
 }
 
-.sidebar a.active {
-  background-color: #c99999;
-}
