@@ -23,39 +23,31 @@
     </nav>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav" :class="{ show: isMenuOpen }">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" v-for="navigation in navigation" 
+            :key="navigation.id" :navigation="navigation">
         <li class="nav-item text-center nav-border">
-          <a class="nav-link" href="#section1">Startseite</a>
-        </li>
-        <li class="nav-item text-center nav-border">
-          <a class="nav-link" href="#section2">Über mich</a>
-        </li>
-        <li class="nav-item text-center">
-          <a class="nav-link" href="#section3">Projekte</a>
+          <a class="nav-link" :href="navigation.href">{{ navigation.page }}</a>
         </li>
       </ul>
     </div>
   </div>
 
-  <nav v-else class="navbar navbar-expand-lg navbar-light">
+  <nav v-else class="navbar navbar-expand-lg navbar-light stroke">
     <div class="container-fluid h-100">
+
       <a class="navbar-logo h-100" href="#">
         <img src="../assets/logo.png" alt="avatar" class="mh-100"/>
       </a>
 
       <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#section1">Startseite</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section2">Über mich</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Projekte</a>
+        <ul class="navbar-nav" v-for="navigation in navigation" 
+            :key="navigation.id" :navigation="navigation">
+          <li class="nav-item me-5">
+            <a class="nav-link" :href="navigation.href">{{ navigation.page }}</a>
           </li>
         </ul>
       </div>
+
     </div>
   </nav>
 
@@ -67,6 +59,23 @@
       return {
         isMenuOpen: false,
         isMobile: window.innerWidth <= 768,
+        navigation: [
+          {
+            id: 1,
+            href: '#section1',
+            page: 'Über mich'
+          },
+          {
+            id: 2,
+            href: '#section2',
+            page: 'Startseite'
+          },
+          {
+            id: 3,
+            href: '#section3',
+            page: 'Projekte'
+          },
+        ]
       };
     },
     methods: {

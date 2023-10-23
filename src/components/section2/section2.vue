@@ -46,9 +46,9 @@
         <div class="d-flex flex-row character-div custom-border align-self-center" ref="pixelatedBg">
 
           <!-- SKILLS -->
-          <div class="d-flex flex-column skills col-4 mt-5">
-            <h2 class="heading mb-5 align-self-center">Skills</h2>
-            <div class="tools-progres nested-row ps-5">
+          <div class="skills col-4">
+            <h2 class="h-25 heading d-flex justify-content-center align-items-center">Skills</h2>
+            <div class="h-75 tools-progres nested-row ps-5">
               <skill-component v-for="skill in skills" :key="skill.id" :skill="skill">
               </skill-component>
             </div>
@@ -60,12 +60,12 @@
           </div>
 
           <!-- TOOLS -->
-          <div class="d-flex flex-column tools col-4 mt-5">
-            <h2 class="heading mb-5 align-self-center">Tools</h2>
-            <div class="nested-row-img">
-              <tool-component v-for="tool in tools" :key="tool.id" :tool="tool">
-              </tool-component>
-            </div>
+          <div class="tools col-4">
+              <h2 class="h-25 heading d-flex justify-content-center align-items-center">Tools</h2>
+              <div class="h-75 nested-row-img">
+                <tool-component v-for="tool in tools" :key="tool.id" :tool="tool">
+                </tool-component>
+              </div>
           </div>
           
         </div>
