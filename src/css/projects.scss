@@ -3,12 +3,18 @@
 .project-img{ 
   border: 3px solid #c99999; 
   border-radius: 50%;
+  height: 300px; 
+    width: 300px; 
 }
 
-/* Media query for desktop view */
-@media (min-width: 768px) {
-  .project-img{
-    height: 300px; 
-    width: 300px; 
+@media (max-width: 768px){
+  #carouselExampleProjects{
+    .carousel-control-prev, .carousel-control-next {
+        width: 25%;
+    }
   }
+  .project-img{
+      height: auto; 
+      width: auto; 
+    }
 }

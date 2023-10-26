@@ -38,7 +38,6 @@
         color: #777;
         margin: 0;
         width: 80px;
-        // text-align: left;
       }
       .prog{
         width: 80%;
@@ -130,4 +129,27 @@
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+  }
+
+  .character-div{
+    width: 90%;
+  }
+  .skills{
+    .tools-progres{
+      .progres{
+        padding-bottom: 30px;
+
+        .prog span::after {
+          right: -33px;
+        }
+      }
+    }
+  }
+
+}
+
 

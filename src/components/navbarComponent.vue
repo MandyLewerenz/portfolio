@@ -7,7 +7,8 @@
           <img src="../assets/logo.png" alt="avatar" class="mh-100" />
         </a>
 
-        <button class="navbar-toggler ml-auto justify-content-end"
+        <button ref="toggleButton" 
+                class="navbar-toggler ml-auto justify-content-end"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
@@ -81,6 +82,9 @@
     methods: {
       toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
+        if(!this.isMenuOpen){
+          this.$refs.toggleButton.blur();
+        }
       },
     },
   };

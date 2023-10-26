@@ -57,6 +57,7 @@
           <div class="d-flex flex-column avatar col-4 align-self-center">
             <img :src="avatarImage" alt="avatar" class="avatar-img" />
             <h2 class="heading align-self-center">Mandy Lewerenz</h2>
+            <h4 class="heading align-self-center">mandy.lewerenz@gmail.com</h4>
           </div>
 
           <!-- TOOLS -->

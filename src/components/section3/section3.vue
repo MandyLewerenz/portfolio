@@ -1,6 +1,6 @@
 <template>
   <!-- PROJEKTE -->
-  <div v-if="isMobile" class="container-fluid g-0" id="section3"  >
+  <div v-if="isMobile" class="container-fluid" id="section3"  >
       <div class="row justify-content-center">
         <div class="col-12 d-flex align-items-center section-height">
           <div id="carouselExampleProjects" class="carousel carousel-dark slide" >
