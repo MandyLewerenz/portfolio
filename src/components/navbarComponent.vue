@@ -41,10 +41,9 @@
       </a>
 
       <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav" v-for="navigation in navigation" 
-            :key="navigation.id" :navigation="navigation">
+        <ul class="navbar-nav" v-for="navigation in navigation" :key="navigation.id" :navigation="navigation">
           <li class="nav-item me-5">
-            <a class="nav-link" :href="navigation.href">{{ navigation.page }}</a>
+            <a class="nav-link" :href="navigation.href" :class="{ 'active': currentPage === navigation.page }" @click="setCurrentPage(navigation.page)">{{ navigation.page }}</a>
           </li>
         </ul>
       </div>
@@ -60,16 +59,17 @@
       return {
         isMenuOpen: false,
         isMobile: window.innerWidth <= 768,
+        currentPage: '',
         navigation: [
           {
             id: 1,
             href: '#section1',
-            page: 'Über mich'
+            page: 'Startseite'
           },
           {
             id: 2,
             href: '#section2',
-            page: 'Startseite'
+            page: 'Über mich'
           },
           {
             id: 3,
@@ -86,6 +86,9 @@
           this.$refs.toggleButton.blur();
         }
       },
+      setCurrentPage(page) {
+        this.currentPage = page;
+      }
     },
   };
 </script>
