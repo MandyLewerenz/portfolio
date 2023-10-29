@@ -94,8 +94,8 @@
           pixelImage: require('@/assets/pixelBg.jpg'),
           avatarImage: require('@/assets/avatar.png'),
           skills: [
-            { id: 1, name: 'HTML', class: 'bg-lnir html', width: '95%' },
-            { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '95%' },
+            { id: 1, name: 'HTML', class: 'bg-lnir html', width: '90%' },
+            { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '85%' },
             { id: 3, name: 'JavaScript', class: 'bg-lnir js', width: '70%' },
             { id: 4, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
             { id: 5, name: 'Vue.js', class: 'bg-lnir vue', width: '30%' },
@@ -106,7 +106,8 @@
             { id: 2, image: require('@/assets/jenkins.png'), alt: 'Jenkins Logo' },
             { id: 3, image: require('@/assets/jira.png'), alt: 'Jira Logo' },
             { id: 4, image: require('@/assets/confluence.png'), alt: 'Confluence Logo' },
-            { id: 5, image: require('@/assets/git.png'), alt: 'Git Logo' }
+            { id: 5, image: require('@/assets/git.png'), alt: 'Git Logo' },
+            { id: 6, image: require('@/assets/scrum.png'), alt: 'Scrum' }
           ]
         }
     }

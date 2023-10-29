@@ -74,9 +74,11 @@
             background-color: darkgrey;
             padding: 1px 5px;
           }
-          &.html::after,
-          &.css::after{
+          &.html::after{
             content: "90%";
+          }
+          &.css::after{
+            content: "85%";
           }
           &.js::after,
           &.jsf::after{
@@ -84,7 +86,7 @@
           }
           &.vue::after,
           &.node::after{
-            content: "40%";
+            content: "30%";
           }
         }
       }
