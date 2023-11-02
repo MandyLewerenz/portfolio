@@ -1,42 +1,43 @@
-.first-container {
-  height: 30%;
+.colored-container {
+  height: 35%;
   background-color: #f2f2f2;
 }
 
 .image-container {
-  height: 70%;
+  height: 65%;
   position: relative;
 }
 
 .rounded-circle-image {
-  width: 200px;
-  height: 200px !important;
+  width: 350px;
+  height: 350px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 10px solid #fff;
   position: absolute;
-  top: -103px;
+  top: -210px;
 }
 
-/* Media query for desktop view */
-@media (min-width: 768px) {
+.mt-50{
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
   .rounded-circle-image {
-    width: 350px;
-    height: 350px !important;
-    top: -210px;
+    width: 200px;
+    height: 200px !important;
+    top: -103px;
   }
 
-  .first-container {
-    height: 35%;
+  .colored-container {
+    height: 30%;
   }
   
   .image-container {
-    height: 65%;
+    height: 70%;
   }
   
-  .mt-50{
-    margin-top: 50px;
-  }
+  
 }
 
 

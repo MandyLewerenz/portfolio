@@ -4,17 +4,29 @@
   border: 3px solid #c99999; 
   border-radius: 50%;
   height: 300px; 
-    width: 300px; 
+  width: 300px; 
+}
+
+.git-link{
+  color: #c99999;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.description{
+  height: 50px;
 }
 
 @media (max-width: 768px){
-  #carouselExampleProjects{
-    .carousel-control-prev, .carousel-control-next {
-        width: 25%;
-    }
-  }
   .project-img{
-      height: auto; 
-      width: auto; 
-    }
+    height: 150px;
+    width: 150px;
+  }
+  .project-text{
+    height: 250px; 
+    display: block;
+  }
 }

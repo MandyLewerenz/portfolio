@@ -1,7 +1,7 @@
 <template>
   <nav v-if="isMobile" class="navbar fixed-top navbar-expand-lg navbar-light">
     
-    <a class="navbar-logo ps-1" href="#">
+    <a class="navbar-logo ps-1" href="#section1">
       <img src="../assets/logo.png" alt="avatar" class="mh-100" />
     </a>
 
@@ -31,7 +31,7 @@
   <nav v-else class="navbar navbar-expand-lg navbar-light stroke">
     <div class="container-fluid h-100">
 
-      <a class="navbar-logo h-100" href="#">
+      <a class="navbar-logo h-100" href="#section1">
         <img src="../assets/logo.png" alt="avatar" class="mh-100" />
       </a>
 

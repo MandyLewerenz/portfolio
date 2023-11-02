@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid g-0" id="section1">
       <div class="row justify-content-center g-0 section-height">
-        <div class="col-12 g-0 first-container"></div>
+        <div class="col-12 g-0 colored-container"></div>
         <div class="col-md-8 col-10 g-0 image-container d-flex flex-column align-items-center justify-content-md-center justify-content-end text-center">
 
           <img :src="avatarImage" class="rounded-circle img-fluid rounded-circle-image" alt="Profilbild" />

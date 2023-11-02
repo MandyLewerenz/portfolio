@@ -18,7 +18,6 @@ import '@/css/character.scss';
 import '@/css/profile.scss';
 import '@/css/projects.scss';
 
-// import '@/js/js.js';
 import navbarComponent from './navbarComponent.vue';
 import section1 from './section1/section1.vue';
 import section2 from './section2/section2.vue';

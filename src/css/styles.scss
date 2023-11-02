@@ -6,13 +6,13 @@ html, body {
 }
 
 .section-height{
-  height: calc(100vh - 60px);
+  height: calc(100vh - 56px);
 }
 
 .sections-wrapper {
-  overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  height: 100vh;
   scroll-behavior: smooth;
 }
 
@@ -28,4 +28,9 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center; 
+}
+
+#section1, #section2, #section3{
+  scroll-snap-align: start;
+  padding-top: 56px;
 }
