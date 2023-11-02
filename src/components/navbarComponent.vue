@@ -1,94 +1,94 @@
 <template>
-  <div v-if="isMobile">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container flex-row">
-        
-        <a class="navbar-logo" href="#">
-          <img src="../assets/logo.png" alt="avatar" class="mh-100" />
-        </a>
+  <nav v-if="isMobile" class="navbar fixed-top navbar-expand-lg navbar-light">
+    
+    <a class="navbar-logo ps-1" href="#">
+      <img src="../assets/logo.png" alt="avatar" class="mh-100" />
+    </a>
 
-        <button ref="toggleButton" 
-                class="navbar-toggler ml-auto justify-content-end"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                @click="toggleMenu"
-                style="z-index:100;">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      </div>
-    </nav>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" :class="{ show: isMenuOpen }">
-      <ul class="navbar-nav ml-auto" v-for="navigation in navigation" 
-            :key="navigation.id" :navigation="navigation">
-        <li class="nav-item text-center nav-border">
-          <a class="nav-link" :href="navigation.href">{{ navigation.page }}</a>
+    <div class="pe-1" id="toggleButton">
+      <button ref="toggleButton" 
+              class="navbar-toggler ml-auto collapsed" 
+              type="button"
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapsibleNavbar"
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation"
+              @click="toggleMenu" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+      <ul class="navbar-nav">
+        <li class="nav-item text-center nav-border" v-for="navigation in navigation" :key="navigation.id">
+          <a class="nav-link" :href="navigation.href" @click="closeNavbar">{{ navigation.page }}</a>
         </li>
       </ul>
     </div>
-  </div>
+
+  </nav>    
 
   <nav v-else class="navbar navbar-expand-lg navbar-light stroke">
     <div class="container-fluid h-100">
 
       <a class="navbar-logo h-100" href="#">
-        <img src="../assets/logo.png" alt="avatar" class="mh-100"/>
+        <img src="../assets/logo.png" alt="avatar" class="mh-100" />
       </a>
 
       <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav" v-for="navigation in navigation" :key="navigation.id" :navigation="navigation">
-          <li class="nav-item me-5">
-            <a class="nav-link" :href="navigation.href" :class="{ 'active': currentPage === navigation.page }" @click="setCurrentPage(navigation.page)">{{ navigation.page }}</a>
+        <ul class="navbar-nav">
+          <li class="nav-item me-5" v-for="navigation in navigation" :key="navigation.id">
+            <a class="nav-link" 
+              :href="navigation.href" 
+              :class="{ 'active': currentPage === navigation.page }">{{ navigation.page }}
+            </a>
           </li>
         </ul>
       </div>
 
     </div>
   </nav>
-
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        isMenuOpen: false,
-        isMobile: window.innerWidth <= 768,
-        currentPage: '',
-        navigation: [
-          {
-            id: 1,
-            href: '#section1',
-            page: 'Startseite'
-          },
-          {
-            id: 2,
-            href: '#section2',
-            page: 'Über mich'
-          },
-          {
-            id: 3,
-            href: '#section3',
-            page: 'Projekte'
-          },
-        ]
-      };
-    },
-    methods: {
-      toggleMenu() {
-        this.isMenuOpen = !this.isMenuOpen;
-        if(!this.isMenuOpen){
-          this.$refs.toggleButton.blur();
-        }
-      },
-      setCurrentPage(page) {
-        this.currentPage = page;
+export default {
+  data() {
+    return {
+      isMenuOpen: false,
+      isMobile: window.innerWidth <= 768,
+      currentPage: '',
+      navigation: [
+        {
+          id: 1,
+          href: '#section1',
+          page: 'Startseite'
+        },
+        {
+          id: 2,
+          href: '#section2',
+          page: 'Über mich'
+        },
+        {
+          id: 3,
+          href: '#section3',
+          page: 'Projekte'
+        },
+      ]
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      if(!this.isMenuOpen){
+        // this.$refs.toggleButton.blur();
       }
     },
-  };
+    closeNavbar() {
+        this.isMenuOpen = false;
+        this.$refs.toggleButton.click();
+
+    }
+  }
+ 
+};
 </script>
