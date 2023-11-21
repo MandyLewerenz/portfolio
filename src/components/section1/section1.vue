@@ -23,7 +23,7 @@
         return {
           name: 'Mandy Lewerenz',
           description: 'Hi! I am a passionate Frontend Developer focused on creating engaging and visually appealing interfaces. Utilizing my expertise in HTML, CSS, JavaScript, and modern frameworks like Vue.js, I strive for excellence in every project, big or small. My design philosophy blends creativity with functionality to deliver a seamless user experience. Feel free to explore my portfolio, and don\'t hesitate to get in touch!',
-          avatarImage: require('@/assets/avatar.png'),
+          avatarImage: require('@/assets/bewerbungsbild2.jpg'),
         }
     }
   }
