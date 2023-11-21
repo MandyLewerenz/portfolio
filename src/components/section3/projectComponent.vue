@@ -36,17 +36,16 @@ export default {
           altText: 'Wetter Logo',
           name: 'Wetter App',
           git: 'https://github.com/MandyLewerenz/weatherly.git',
-          description: 'Diese Vue.js-Komponente ermöglicht das Abrufen von Wetterdaten basierend auf einer Stadteingabe. Durch die Integration der OpenWeatherMap-API werden aktuelle Wetterdaten sowie Prognosen für die kommenden drei Tage bereitgestellt. Die Ergebnisse werden mit Datum, Temperatur, Wetterbeschreibung und einem zugehörigen Icon präsentiert.'
+          description: 'Singe-Page-Application with API integration to retrieve weather data based on city input'
         },
-        // Ein responsives Design garantiert eine optimale Darstellung auf verschiedenen Geräten.
         {
           id: 2,
-          image: require('@/assets/docker.png'),
+          image: require('@/assets/memoryLogo1.png'),
           class: 'carousel-item',
-          altText: 'Docker Logo',
-          name: 'Memorie',
+          altText: 'Memory',
+          name: 'Memory',
           git: 'https://github.com/MandyLewerenz/memory.git',
-          description: 'Diese Vue.js-Komponente stellt ein Memory-Spiel dar, bei dem Nutzer versuchen, passende Kartenpaare zu finden.'
+          description: 'Single-Page-Application for playing the game Memory.'
         },
       ],
     }

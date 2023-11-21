@@ -61,17 +61,17 @@ export default {
         {
           id: 1,
           href: '#section1',
-          page: 'Startseite'
+          page: 'Homepage'
         },
         {
           id: 2,
           href: '#section2',
-          page: 'Über mich'
+          page: 'About me'
         },
         {
           id: 3,
           href: '#section3',
-          page: 'Projekte'
+          page: 'Projects'
         },
       ]
     };
