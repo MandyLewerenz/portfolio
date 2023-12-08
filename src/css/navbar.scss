@@ -5,7 +5,7 @@
   height: 40px;
 }
 
-.nav-border{
+.nav-border {
   border-bottom: 1px solid lightgrey;
 }
 
@@ -13,14 +13,14 @@
 
   .navbar {
     width: 100%;
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2;
     border-bottom: 1px solid #e1dfdf;
     height: 60px;
-    z-index:1;
+    z-index: 1;
     position: absolute;
   }
 
-  .nav-link:hover{
+  .nav-link:hover {
     font-weight: 500;
   }
 
@@ -40,6 +40,7 @@
       background: #aaa;
       height: 1px;
     }
+
     &:hover:after {
       width: 100%;
     }
@@ -54,35 +55,36 @@
 @media (max-width: 769px) {
 
   .navbar {
-    background-color: #f2f2f2; 
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); 
+    background-color: #f2f2f2;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 
-    &:has(button:not(.collapsed)){
+    &:has(button:not(.collapsed)) {
       padding-bottom: 0;
     }
   }
 
-  #collapsibleNavbar{
-    width:100%; 
-    background-color: #f2f2f2; 
-    z-index:1;
+  #collapsibleNavbar {
+    width: 100%;
+    background-color: #f2f2f2;
+    z-index: 1;
   }
 
   .nav-link.active {
     font-weight: 500;
   }
 
-  #toggleButton{
+  #toggleButton {
     z-index: 2;
-    button{
-      &:not(.collapsed){
+
+    button {
+      &:not(.collapsed) {
         box-shadow: 0 0 0 0.1rem;
       }
-      &.collapsed{
+
+      &.collapsed {
         box-shadow: none;
       }
     }
   }
 
 }
-

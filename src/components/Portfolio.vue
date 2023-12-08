@@ -1,5 +1,4 @@
 <template>
-
   <navbarComponent />
 
   <div ref="content" class="sections-wrapper" data-bs-spy="scroll" data-bs-target=".navbar-light">

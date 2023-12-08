@@ -1,71 +1,72 @@
 @import 'styles';
 
 .custom-border {
-  border: 10px solid #e7b7b7; 
+  border: 10px solid #e7b7b7;
   border-radius: 5px;
-  outline: 2px solid darkgrey; 
+  outline: 2px solid darkgrey;
   background-image: url('../assets/pixelBg.jpg');
 }
 
-.character-div{
-  height: calc(100vh - 20vh); 
+.character-div {
+  height: calc(100vh - 20vh);
   width: 80%;
 }
 
-.skills{
-  .grid-progress{
+.skills {
+  .grid-progress {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
   }
 
-  .bg-lnir{
-    background-image: linear-gradient(to right, #f0bdbd , #c99999);
+  .bg-lnir {
+    background-image: linear-gradient(to right, #f0bdbd, #c99999);
     top: 0;
     left: 0;
   }
 
-  .tools-progres{
+  .tools-progres {
     padding-left: 40px;
 
-    .progres{
+    .progres {
       position: relative;
       padding-bottom: 50px;
-    
-      p{
+
+      p {
         font-size: 14px;
         font-weight: 600;
         color: #777;
         margin: 0;
         width: 80px;
       }
-      .prog{
+
+      .prog {
         width: 80%;
         background-color: #dddddd;
         border: 3px solid #eee;
         border-radius: 15px;
         height: 20px;
         position: relative;
-      
-        span{
+
+        span {
           position: absolute;
           height: 100%;
           border-radius: 15px;
 
-          &::before{
+          &::before {
             position: absolute;
             content: "";
             height: 0;
             width: 0;
             right: 0;
             top: -7px;
-            border: 7px solid  transparent;
+            border: 7px solid transparent;
             border-bottom-width: 0;
             border-right-width: 0;
             border-top-color: darkgrey;
           }
 
-          &::after{
+          &::after {
             color: white;
             position: absolute;
             border-radius: 3px;
@@ -74,18 +75,22 @@
             background-color: darkgrey;
             padding: 1px 5px;
           }
-          &.html::after{
+
+          &.html::after {
             content: "90%";
           }
-          &.css::after{
+
+          &.css::after {
             content: "85%";
           }
+
           &.js::after,
-          &.jsf::after{
+          &.jsf::after {
             content: "70%";
           }
+
           &.vue::after,
-          &.node::after{
+          &.node::after {
             content: "30%";
           }
         }
@@ -94,23 +99,24 @@
   }
 }
 
-.avatar{
-  .avatar-img{
-    position: relative; 
-    z-index: 100; 
-    height: 400px; 
+.avatar {
+  .avatar-img {
+    position: relative;
+    z-index: 100;
+    height: 400px;
     align-self: center;
   }
 }
 
-.tools{
+.tools {
   .squares {
-    aspect-ratio: 1/1; /* makes the div a square */
+    aspect-ratio: 1/1;
+    /* makes the div a square */
     background-color: #f2f2f2;
     border: 2px solid darkgrey;
     border-radius: 5px;
   }
-  
+
   .img-square img {
     max-width: 100%;
     max-height: 100%;
@@ -121,7 +127,7 @@
   .nested-row-img {
     display: grid;
     grid-template-columns: 30% 30%;
-    gap: 10px; 
+    gap: 10px;
     align-content: start;
     justify-content: center;
   }
@@ -133,16 +139,19 @@
 }
 
 @media (max-width: 768px) {
-  .carousel-control-prev, .carousel-control-next {
+
+  .carousel-control-prev,
+  .carousel-control-next {
     width: 10%;
   }
 
-  .character-div{
+  .character-div {
     width: 90%;
   }
-  .skills{
-    .tools-progres{
-      .progres{
+
+  .skills {
+    .tools-progres {
+      .progres {
         padding-bottom: 30px;
 
         .prog span::after {
@@ -153,5 +162,3 @@
   }
 
 }
-
-

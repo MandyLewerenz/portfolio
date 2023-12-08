@@ -3,7 +3,8 @@
     <div class="row">
       <div class="d-flex flex-row justify-content-center section-height">
 
-        <div class="carousel carousel-dark slide character-div custom-border align-self-center" ref="pixelatedBg" id="carouselExample">
+        <div class="carousel carousel-dark slide character-div custom-border align-self-center" ref="pixelatedBg"
+          id="carouselExample">
           <div class="carousel-inner">
 
             <!-- SKILLS -->
@@ -62,13 +63,13 @@
 
           <!-- TOOLS -->
           <div class="tools col-4">
-              <h2 class="h-25 heading d-flex justify-content-center align-items-center">Tools</h2>
-              <div class="h-75 nested-row-img">
-                <tool-component v-for="tool in tools" :key="tool.id" :tool="tool">
-                </tool-component>
-              </div>
+            <h2 class="h-25 heading d-flex justify-content-center align-items-center">Tools</h2>
+            <div class="h-75 nested-row-img">
+              <tool-component v-for="tool in tools" :key="tool.id" :tool="tool">
+              </tool-component>
+            </div>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -77,39 +78,39 @@
 
 
 <script>
-  import skillComponent from './skillComponent.vue';
-  import toolComponent from './toolComponent.vue';
+import skillComponent from './skillComponent.vue';
+import toolComponent from './toolComponent.vue';
 
-  export default {
-    props: {
-      tool: Object
-    },
-    components: {
-      skillComponent,
-      toolComponent
-    },
-    data() {
-        return {
-          isMobile: window.innerWidth <= 768,
-          pixelImage: require('@/assets/pixelBg.jpg'),
-          avatarImage: require('@/assets/avatar.png'),
-          skills: [
-            { id: 1, name: 'HTML', class: 'bg-lnir html', width: '90%' },
-            { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '85%' },
-            { id: 3, name: 'JavaScript', class: 'bg-lnir js', width: '70%' },
-            { id: 4, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
-            { id: 5, name: 'Vue.js', class: 'bg-lnir vue', width: '30%' },
-            { id: 6, name: 'Node', class: 'bg-lnir node', width: '30%' }
-          ],
-          tools: [
-            { id: 1, image: require('@/assets/docker.png'), alt: 'Docker Logo' },
-            { id: 2, image: require('@/assets/jenkins.png'), alt: 'Jenkins Logo' },
-            { id: 3, image: require('@/assets/jira.png'), alt: 'Jira Logo' },
-            { id: 4, image: require('@/assets/confluence.png'), alt: 'Confluence Logo' },
-            { id: 5, image: require('@/assets/git.png'), alt: 'Git Logo' },
-            { id: 6, image: require('@/assets/scrum.png'), alt: 'Scrum' }
-          ]
-        }
+export default {
+  props: {
+    tool: Object
+  },
+  components: {
+    skillComponent,
+    toolComponent
+  },
+  data() {
+    return {
+      isMobile: window.innerWidth <= 768,
+      pixelImage: require('@/assets/pixelBg.jpg'),
+      avatarImage: require('@/assets/avatar.png'),
+      skills: [
+        { id: 1, name: 'HTML', class: 'bg-lnir html', width: '90%' },
+        { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '85%' },
+        { id: 3, name: 'JavaScript', class: 'bg-lnir js', width: '70%' },
+        { id: 4, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
+        { id: 5, name: 'Vue.js', class: 'bg-lnir vue', width: '30%' },
+        { id: 6, name: 'Node', class: 'bg-lnir node', width: '30%' }
+      ],
+      tools: [
+        { id: 1, image: require('@/assets/docker.png'), alt: 'Docker Logo' },
+        { id: 2, image: require('@/assets/jenkins.png'), alt: 'Jenkins Logo' },
+        { id: 3, image: require('@/assets/jira.png'), alt: 'Jira Logo' },
+        { id: 4, image: require('@/assets/confluence.png'), alt: 'Confluence Logo' },
+        { id: 5, image: require('@/assets/git.png'), alt: 'Git Logo' },
+        { id: 6, image: require('@/assets/scrum.png'), alt: 'Scrum' }
+      ]
     }
   }
+}
 </script>
