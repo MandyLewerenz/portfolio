@@ -37,3 +37,15 @@ body {
   scroll-snap-align: start;
   padding-top: 56px;
 }
+
+@media (max-width: 768px) {
+  #section1,
+  #section2,
+  #section3 {
+    padding-bottom: 50px;
+  }
+
+  .section-height {
+    height: calc(100vh - 56px - 50px);
+  }
+}
