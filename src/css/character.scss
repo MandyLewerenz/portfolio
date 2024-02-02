@@ -76,22 +76,23 @@
             padding: 1px 5px;
           }
 
-          &.html::after {
+          &.html::after,
+          &.css::after,
+          &.bs::after {
             content: "90%";
           }
 
-          &.css::after {
-            content: "85%";
+          &.js::after {
+            content: "80%";
           }
 
-          &.js::after,
           &.jsf::after {
             content: "70%";
           }
 
           &.vue::after,
-          &.node::after {
-            content: "30%";
+          &.ts::after {
+            content: "50%";
           }
         }
       }

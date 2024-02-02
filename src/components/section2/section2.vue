@@ -96,11 +96,12 @@ export default {
       avatarImage: require('@/assets/avatar.png'),
       skills: [
         { id: 1, name: 'HTML', class: 'bg-lnir html', width: '90%' },
-        { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '85%' },
-        { id: 3, name: 'JavaScript', class: 'bg-lnir js', width: '70%' },
-        { id: 4, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
-        { id: 5, name: 'Vue.js', class: 'bg-lnir vue', width: '30%' },
-        { id: 6, name: 'Node', class: 'bg-lnir node', width: '30%' }
+        { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '90%' },
+        { id: 3, name: 'Bootstrap', class: 'bg-lnir bs', width: '90%' },
+        { id: 4, name: 'JavaScript', class: 'bg-lnir js', width: '80%' },
+        { id: 5, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
+        { id: 6, name: 'Vue.js', class: 'bg-lnir vue', width: '50%' },
+        { id: 7, name: 'TypeScript', class: 'bg-lnir ts', width: '50%' }
       ],
       tools: [
         { id: 1, image: require('@/assets/docker.png'), alt: 'Docker Logo' },
