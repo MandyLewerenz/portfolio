@@ -99,9 +99,9 @@ export default {
         { id: 2, name: 'CSS/SASS', class: 'bg-lnir css', width: '90%' },
         { id: 3, name: 'Bootstrap', class: 'bg-lnir bs', width: '90%' },
         { id: 4, name: 'JavaScript', class: 'bg-lnir js', width: '80%' },
-        { id: 5, name: 'JSF', class: 'bg-lnir jsf', width: '70%' },
-        { id: 6, name: 'Vue.js', class: 'bg-lnir vue', width: '50%' },
-        { id: 7, name: 'TypeScript', class: 'bg-lnir ts', width: '50%' }
+        { id: 5, name: 'JSF', class: 'bg-lnir jsf', width: '80%' },
+        { id: 6, name: 'Vue.js', class: 'bg-lnir vue', width: '70%' },
+        { id: 7, name: 'PHP', class: 'bg-lnir ts', width: '50%' }
       ],
       tools: [
         { id: 1, image: require('@/assets/docker.png'), alt: 'Docker Logo' },
