@@ -86,12 +86,12 @@
             content: "80%";
           }
 
-          &.jsf::after {
+          &.vue::after {
             content: "70%";
           }
 
-          &.vue::after,
-          &.ts::after {
+          &.ts::after,
+          &.jsf::after {
             content: "50%";
           }
         }
